@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <!-- Page Content-->
+    <section class="pt-4">
+        <div class="container px-lg-5">
+            <!-- Page Features-->
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="../{{ rolemodel.img }}" alt="Profile image for {{ rolemodel.name }}">
+                    <h2 class="col-md-7">{{ rolemodel.name }}</h2>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <p>{{ rolemodel.full_text }}</p>
+            </div>
+
+
+
+        </div>
+    </section>
+{% endblock %}

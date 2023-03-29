@@ -1,5 +1,8 @@
 import os
+import json
 from flask import Flask, render_template
+if os.path.exists("env.py"):
+    import env
 
 
 app = Flask(__name__)
@@ -12,7 +15,21 @@ def index():
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    data = []
+    with open("data/rolemodels.json", "r") as json_data:
+        data = json.load(json_data)
+    return render_template("about.html", rolemodels=data)
+
+
+@app.route("/about/<rolemodel_name>")
+def about_rolemodel(rolemodel_name):
+    rolemodel = {}
+    with open("data/rolemodels.json", "r") as json_data:
+        data = json.load(json_data)
+        for obj in data:
+            if obj["url"] == rolemodel_name:
+                rolemodel = obj
+    return render_template("rolemodel.html", rolemodel=rolemodel)
 
 
 if __name__ == "__main__":

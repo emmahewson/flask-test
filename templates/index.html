@@ -1,16 +1,14 @@
 {% extends "base.html" %}
 {% set active_page = 'home' %}
 {% block content %}
-
-    <h1>Home Page</h1>
     <!-- Header-->
     <header class="py-5">
         <div class="container px-lg-5">
-            <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+            <div class="p-4 p-lg-5 bg-dark rounded-3 text-center" id="header-box">
                 <div class="m-4 m-lg-5">
-                    <h1 class="display-5 fw-bold">A warm welcome!</h1>
-                    <p class="fs-4">Bootstrap utility classes are used to create this jumbotron since the old component has been removed from the framework. Why create custom CSS when you can use utilities?</p>
-                    <a class="btn btn-primary btn-lg" href="#!">Call to action</a>
+                    <h1 class="display-5 fw-bold">Welcome to Women In Tech</h1>
+                    <p class="fs-4">Find out about the contributions that women have made to the world of tech and learn about some of our female tech heros.</p>
+                    <a class="btn btn-primary btn-lg" href="{{ url_for('about') }}">Find Out More</a>
                 </div>
             </div>
         </div>
