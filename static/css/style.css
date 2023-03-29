@@ -8,4 +8,22 @@
 
 .rm-card-text {
     padding: 3rem;
+    color: black;
 }
+
+* {
+    text-decoration: none !important;
+}
+
+#header-box {
+    background-image: url("../assets/images/hero-image.webp");
+    background-size: cover;
+    background-position: bottom;
+}
+
+#header-box h1,
+#header-box p {
+    color: white;
+    text-shadow: 0px 0px 5px black;
+}
+
